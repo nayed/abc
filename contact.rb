@@ -1,5 +1,19 @@
+require "./phone_number"
+
 class Contact
   attr_accessor :first_name, :middle_name, :last_name
+  attr_reader :phone_numbers
+
+  def initialize
+    @phone_numbers = []  
+  end
+
+  def add_phone_number(kind, number)
+    phone_number = PhoneNumber.new
+    phone_number.kind = kind
+    phone_number.number = number
+    phone_numbers << phone_number
+  end
 
   def first_last
     "#{first_name} #{last_name}"
@@ -42,17 +56,22 @@ class Contact
       first_last
     end
   end
+
+  def print_phone_numbers
+    puts "Phone Numbers"
+    phone_numbers.each { |phone_number| puts phone_number }
+  end
 end
 
 nayed = Contact.new
 nayed.first_name = "Nayed"
 nayed.last_name = "Saïd Ali"
-puts nayed.to_s
-puts nayed.to_s 'full_name'
-puts nayed.to_s 'first_last'
+nayed.add_phone_number "Home", "01-23-45-67-89"
+nayed.add_phone_number "Work", "98-76-54-32-10"
+nayed.print_phone_numbers
 
-jack = Contact.new
-jack.first_name = "Jack"
-jack.middle_name = "Jackouille"
-jack.last_name = "De la Marmotter"
-puts jack.to_s 'last_first'
+# jack = Contact.new
+# jack.first_name = "Jack"
+# jack.middle_name = "Jackouille"
+# jack.last_name = "De la Marmotter"
+# puts jack.to_s 'last_first'
