@@ -81,19 +81,3 @@ class Contact
     addresses.each { |address| puts address.to_s 'short' }
   end
 end
-
-nayed = Contact.new
-nayed.first_name = "Nayed"
-nayed.last_name = "Saïd Ali"
-nayed.add_phone_number "Home", "01-23-45-67-89"
-nayed.add_phone_number "Work", "98-76-54-32-10"
-nayed.add_address("Home", "123 rue du Ruby", "", "Lyon", "69800", "France", "")
-puts nayed.to_s 'full_name'
-nayed.print_phone_numbers
-nayed.print_addresses
-
-# jack = Contact.new
-# jack.first_name = "Jack"
-# jack.middle_name = "Jackouille"
-# jack.last_name = "De la Marmotter"
-# puts jack.to_s 'last_first'
