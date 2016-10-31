@@ -39,7 +39,7 @@ class Contact
     last_first += first_name
     unless middle_name.nil?
       last_first += " "
-      last_first += middle_name[0]
+      last_first += middle_name.slice(0, 1)
       last_first += "."
     end
     last_first
