@@ -1,5 +1,5 @@
-require "./contact"
 require "yaml"
+require_relative "contact"
 
 class AddressBook
   attr_reader :contacts
@@ -149,6 +149,3 @@ class AddressBook
     end
   end
 end
-
-address_book = AddressBook.new
-address_book.run

@@ -1,5 +1,5 @@
-require "./phone_number"
-require "./address"
+require_relative "phone_number"
+require_relative "address"
 
 class Contact
   attr_accessor :first_name, :middle_name, :last_name
